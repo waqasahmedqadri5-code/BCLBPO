@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BCL BPO — AI-Powered Global Outsourcing Solutions</title>
+
+    <meta name="description"
+        content="BCL BPO delivers enterprise-grade customer support, virtual assistants, healthcare BPO, technical support, and AI-enhanced outsourcing solutions for global companies." />
+
+    <meta name="keywords"
+        content="BPO, Outsourcing, Call Center, Virtual Assistant, Customer Support, Technical Support, Healthcare BPO, AI Outsourcing" />
+
+    <meta property="og:title" content="BCL BPO — AI-Powered Global Outsourcing" />
+    <meta property="og:description"
+        content="Scale faster with enterprise outsourcing solutions powered by AI-driven operations." />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- GSAP -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        bg: "#050816",
+                        card: "rgba(255,255,255,0.05)",
+                        border: "rgba(255,255,255,0.08)",
+                        primary: "#00E5FF",
+                        secondary: "#7C3AED",
+                        text: "#F8FAFC",
+                        muted: "#94A3B8"
+                    },
+                    boxShadow: {
+                        glow: "0 0 40px rgba(0,229,255,0.2)",
+                        purple: "0 0 40px rgba(124,58,237,0.25)"
+                    },
+                    backdropBlur: {
+                        xs: "2px"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            background: #050816;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-image:
+                radial-gradient(circle at top left, rgba(0, 229, 255, 0.08), transparent 25%),
+                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.12), transparent 25%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glow-border {
+            position: relative;
+        }
+
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.5), rgba(124, 58, 237, 0.5));
+            -webkit-mask: 
+            
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00E5FF, #7C3AED);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 229, 255, 0.4);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00E5FF, #7C3AED);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.3);
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .world-map {
+            background:
+                radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%);
+        }
+
+        .input-style {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+        }
+
+        .input-style:focus {
+            outline: none;
+            border-color: #00E5FF;
+            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+        }
+
+        ::selection {
+            background: #00E5FF;
+            color: black;
+        }
+
+        .noise {
+            position: absolute;
+            inset: 0;
+            background-image:
+                url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND BLOBS -->
+    <div class="blob w-[500px] h-[500px] bg-cyan-500 top-[-120px] left-[-120px] rounded-full"></div>
+
+    <div class="blob w-[500px] h-[500px] bg-purple-600 bottom-[-150px] right-[-150px] rounded-full"></div>
+
+    <!-- HEADER -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+            <!-- LOGO -->
+            <div class="flex items-center gap-3">
+
+                <div
+                    class="w-10 h-10 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center shadow-glow">
+
+                    <i class="fa-solid fa-wave-square"></i>
+                </div>
+
+                <div>
+                    <h1 class="font-black text-xl tracking-wide">
+                        BCL BPO
+                    </h1>
+
+                    <p class="text-xs text-slate-400">
+                        AI-Powered Outsourcing
+                    </p>
+                </div>
+            </div>
+
+            <!-- NAV -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm">
+
+                <a href="#services"
+                    class="hover:text-cyan-400 transition">
+                    Services
+                </a>
+
+                <a href="#why"
+                    class="hover:text-cyan-400 transition">
+                    Why Us
+                </a>
+
+                <a href="#process"
+                    class="hover:text-cyan-400 transition">
+                    Process
+                </a>
+
+                <a href="#case-studies"
+                    class="hover:text-cyan-400 transition">
+                    Case Studies
+                </a>
+
+                <a href="#contact"
+                    class="hover:text-cyan-400 transition">
+                    Contact
+                </a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+
+                <button
+                    class="px-5 py-2 rounded-xl border border-white/10 hover:border-cyan-400 transition">
+                    Client Portal
+                </button>
+
+                <button
+                    class="btn-primary px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                    Book Strategy Call
+                </button>
+            </div>
+
+            <!-- MOBILE -->
+            <button id="mobileBtn"
+                class="lg:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[999] hidden">
+
+        <div
+            class="w-[85%] max-w-sm h-full bg-[#0B1020] border-r border-white/10 p-8">
+
+            <div class="flex justify-between items-center mb-12">
+
+                <h2 class="text-2xl font-black">
+                    BCL BPO
+                </h2>
+
+                <button id="closeMobile">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-6 text-lg">
+
+                <a href="#services">Services</a>
+
+                <a href="#why">Why Us</a>
+
+                <a href="#process">Process</a>
+
+                <a href="#case-studies">Case Studies</a>
+
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section
+        class="relative min-h-screen flex items-center hero-grid overflow-hidden">
+
+        <div class="noise"></div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 relative z-10">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- LEFT -->
+                <div class="section-fade">
+
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass mb-8">
+
+                        <div
+                            class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse">
+                        </div>
+
+                        <span class="text-sm text-slate-300">
+                            Trusted by global startups & enterprise brands
+                        </span>
+                    </div>
+
+                    <h1
+                        class="text-5xl md:text-7xl font-black leading-tight mb-8">
+
+                        Future-Ready
+
+                        <span class="gradient-text">
+                            BPO Solutions
+                        </span>
+
+                        Powered By AI Operations
+                    </h1>
+
+                    <p
+                        class="text-xl text-slate-400 leading-relaxed max-w-2xl mb-10">
+
+                        Scale customer support, sales operations, virtual
+                        assistance, and back-office workflows with
+                        enterprise-grade outsourcing built for modern global
+                        businesses.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-5 mb-12">
+
+                        <button
+                            class="btn-primary px-8 py-4 rounded-2xl font-bold transition-all duration-300">
+
+                            Get Started
+                        </button>
+
+                        <button
+                            class="glass px-8 py-4 rounded-2xl font-semibold hover:border-cyan-400 transition">
+
+                            Explore Services
+                        </button>
+                    </div>
+
+                    <!-- STATS -->
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h3
+                                class="text-3xl font-black text-cyan-400 counter"
+                                data-target="98">
+                                0
+                            </h3>
+
+                            <p class="text-sm text-slate-400 mt-2">
+                                Client Satisfaction
+                            </p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h3
+                                class="text-3xl font-black text-cyan-400 counter"
+                                data-target="24">
+                                0
+                            </h3>
+
+                            <p class="text-sm text-slate-400 mt-2">
+                                Hour Operations
+                            </p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h3
+                                class="text-3xl font-black text-cyan-400 counter"
+                                data-target="120">
+                                0
+                            </h3>
+
+                            <p class="text-sm text-slate-400 mt-2">
+                                Global Agents
+                            </p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h3
+                                class="text-3xl font-black text-cyan-400 counter"
+                                data-target="35">
+                                0
+                            </h3>
+
+                            <p class="text-sm text-slate-400 mt-2">
+                                Countries Served
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div
+                    class="relative section-fade flex justify-center">
+
+                    <div
+                        class="glass glow-border rounded-[32px] p-8 max-w-xl w-full floating shadow-glow">
+
+                        <div
+                            class="flex justify-between items-center mb-8">
+
+                            <div>
+
+                                <p class="text-sm text-slate-400">
+                                    AI Operations Dashboard
+                                </p>
+
+                                <h3 class="text-2xl font-bold mt-1">
+                                    Live Workforce Intelligence
+                                </h3>
+                            </div>
+
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center">
+
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5">
+
+                            <div
+                                class="glass rounded-2xl p-5 flex justify-between items-center">
+
+                                <div>
+
+                                    <p class="text-slate-400 text-sm">
+                                        Customer Support
+                                    </p>
+
+                                    <h4 class="text-xl font-bold">
+                                        98.2% SLA
+                                    </h4>
+                                </div>
+
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl">
+
+                                    <i
+                                        class="fa-solid fa-headset"></i>
+                                </div>
+                            </div>
+
+                            <div
+                                class="glass rounded-2xl p-5 flex justify-between items-center">
+
+                                <div>
+
+                                    <p class="text-slate-400 text-sm">
+                                        AI Automation
+                                    </p>
+
+                                    <h4 class="text-xl font-bold">
+                                        72% Faster Workflows
+                                    </h4>
+                                </div>
+
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl">
+
+                                    <i
+                                        class="fa-solid fa-microchip"></i>
+                                </div>
+                            </div>
+
+                            <div
+                                class="glass rounded-2xl p-5 flex justify-between items-center">
+
+                                <div>
+
+                                    <p class="text-slate-400 text-sm">
+                                        Global Coverage
+                                    </p>
+
+                                    <h4 class="text-xl font-bold">
+                                        24/7 Operations
+                                    </h4>
+                                </div>
+
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl">
+
+                                    <i
+                                        class="fa-solid fa-globe"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRUST LOGOS -->
+            <div class="mt-32 overflow-hidden">
+
+                <div
+                    class="flex gap-16 whitespace-nowrap marquee text-slate-500 text-2xl font-bold">
+
+                    <span>SHOPIFY</span>
+                    <span>SALESFORCE</span>
+                    <span>ZENDESK</span>
+                    <span>SLACK</span>
+                    <span>HUBSPOT</span>
+                    <span>NOTION</span>
+                    <span>STRIPE</span>
+                    <span>AIRCALL</span>
+                    <span>SHOPIFY</span>
+                    <span>SALESFORCE</span>
+                    <span>ZENDESK</span>
+                    <span>SLACK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services"
+        class="py-32 relative">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div
+                class="max-w-3xl mb-20 section-fade">
+
+                <p
+                    class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                    SERVICES
+                </p>
+
+                <h2
+                    class="text-4xl md:text-6xl font-black leading-tight mb-6">
+
+                    Enterprise Outsourcing
+                    Designed For
+                    Modern Growth
+                </h2>
+
+                <p
+                    class="text-xl text-slate-400 leading-relaxed">
+
+                    Scalable teams, AI-enhanced operations, and
+                    enterprise-grade support infrastructure tailored for
+                    global companies.
+                </p>
+            </div>
+
+            <div
+                class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                <!-- CARD -->
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Customer Support
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        Omnichannel customer experience support with
+                        multilingual teams available 24/7.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Call Center Operations
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        High-performance inbound and outbound calling
+                        solutions with advanced reporting.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Technical Support
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        Dedicated technical support agents trained for SaaS,
+                        software, and IT troubleshooting.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Virtual Assistants
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        Executive assistance, admin support, scheduling,
+                        inbox management, and CRM handling.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Sales & Lead Generation
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        Pipeline acceleration through outbound prospecting,
+                        appointment setting, and sales support.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card glass rounded-3xl p-8 transition-all duration-500 section-fade">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl mb-8">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Healthcare BPO
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed">
+                        HIPAA-aware support teams for medical scheduling,
+                        patient coordination, and billing workflows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why"
+        class="py-32">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div
+                class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <div class="section-fade">
+
+                    <p
+                        class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                        WHY BCL BPO
+                    </p>
+
+                    <h2
+                        class="text-4xl md:text-6xl font-black leading-tight mb-8">
+
+                        Built For
+                        Global Scale
+                        & Enterprise Trust
+                    </h2>
+
+                    <p
+                        class="text-xl text-slate-400 leading-relaxed mb-10">
+
+                        We combine AI-powered operational intelligence,
+                        world-class support infrastructure, and highly trained
+                        outsourcing teams to help businesses scale faster.
+                    </p>
+
+                    <div class="space-y-6">
+
+                        <div
+                            class="glass rounded-2xl p-6 flex gap-5">
+
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+
+                                <i
+                                    class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+
+                                <h4 class="font-bold text-xl mb-2">
+                                    Enterprise Security
+                                </h4>
+
+                                <p class="text-slate-400">
+                                    ISO 27001 aligned workflows with secure
+                                    operational environments.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="glass rounded-2xl p-6 flex gap-5">
+
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400">
+
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+
+                            <div>
+
+                                <h4 class="font-bold text-xl mb-2">
+                                    AI-Enhanced Operations
+                                </h4>
+
+                                <p class="text-slate-400">
+                                    Smarter workflows powered by automation,
+                                    analytics, and operational intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BENTO GRID -->
+                <div
+                    class="grid grid-cols-2 gap-6 section-fade">
+
+                    <div
+                        class="glass rounded-3xl p-8 col-span-2">
+
+                        <div
+                            class="flex items-center justify-between">
+
+                            <div>
+
+                                <p class="text-slate-400">
+                                    Workforce Efficiency
+                                </p>
+
+                                <h3
+                                    class="text-5xl font-black mt-3 gradient-text">
+                                    +72%
+                                </h3>
+                            </div>
+
+                            <div
+                                class="w-20 h-20 rounded-3xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-3xl">
+
+                                <i
+                                    class="fa-solid fa-chart-pie"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass rounded-3xl p-8">
+
+                        <h3 class="text-4xl font-black">
+                            24/7
+                        </h3>
+
+                        <p class="text-slate-400 mt-3">
+                            Global support availability
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass rounded-3xl p-8">
+
+                        <h3 class="text-4xl font-black">
+                            99.9%
+                        </h3>
+
+                        <p class="text-slate-400 mt-3">
+                            Operational uptime
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass rounded-3xl p-8 col-span-2">
+
+                        <div
+                            class="flex justify-between items-center">
+
+                            <div>
+
+                                <h3 class="text-2xl font-bold">
+                                    AI Workflow Automation
+                                </h3>
+
+                                <p
+                                    class="text-slate-400 mt-3 max-w-md">
+
+                                    Intelligent automation tools reduce
+                                    manual work and increase response speed.
+                                </p>
+                            </div>
+
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl">
+
+                                <i
+                                    class="fa-solid fa-robot"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process"
+        class="py-32 relative overflow-hidden">
+
+        <div
+            class="max-w-6xl mx-auto px-6 lg:px-12">
+
+            <div class="text-center mb-24 section-fade">
+
+                <p
+                    class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                    PROCESS
+                </p>
+
+                <h2
+                    class="text-4xl md:text-6xl font-black">
+                    Seamless Outsourcing
+                    Deployment
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <div class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-black text-xl mb-8">
+
+                        01
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Discovery
+                    </h3>
+
+                    <p class="text-slate-400">
+                        We analyze your workflows, pain points, and support
+                        requirements.
+                    </p>
+                </div>
+
+                <div class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 font-black text-xl mb-8">
+
+                        02
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Team Setup
+                    </h3>
+
+                    <p class="text-slate-400">
+                        Specialized agents are trained and integrated into
+                        your systems.
+                    </p>
+                </div>
+
+                <div class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-black text-xl mb-8">
+
+                        03
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Optimization
+                    </h3>
+
+                    <p class="text-slate-400">
+                        AI-driven analytics improve efficiency and customer
+                        experience.
+                    </p>
+                </div>
+
+                <div class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 font-black text-xl mb-8">
+
+                        04
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Scale
+                    </h3>
+
+                    <p class="text-slate-400">
+                        Expand operations globally with reliable 24/7 support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies"
+        class="py-32">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div
+                class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20 section-fade">
+
+                <div>
+
+                    <p
+                        class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                        CASE STUDIES
+                    </p>
+
+                    <h2
+                        class="text-4xl md:text-6xl font-black leading-tight">
+
+                        Real Results
+                        For Fast-Growing Companies
+                    </h2>
+                </div>
+
+                <p
+                    class="text-xl text-slate-400 max-w-xl">
+
+                    We help businesses reduce operational costs,
+                    improve response times, and scale globally.
+                </p>
+            </div>
+
+            <div
+                class="grid lg:grid-cols-2 gap-8">
+
+                <div
+                    class="glass rounded-[32px] p-10 section-fade">
+
+                    <div
+                        class="flex justify-between items-center mb-10">
+
+                        <div>
+
+                            <p class="text-slate-400">
+                                SaaS Customer Support
+                            </p>
+
+                            <h3
+                                class="text-3xl font-black mt-2">
+                                65% Faster Ticket Resolution
+                            </h3>
+                        </div>
+
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl">
+
+                            <i
+                                class="fa-solid fa-ticket"></i>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6">
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                +48%
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                CSAT
+                            </p>
+                        </div>
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                -37%
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                Costs
+                            </p>
+                        </div>
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                24/7
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                Support
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass rounded-[32px] p-10 section-fade">
+
+                    <div
+                        class="flex justify-between items-center mb-10">
+
+                        <div>
+
+                            <p class="text-slate-400">
+                                E-Commerce Operations
+                            </p>
+
+                            <h3
+                                class="text-3xl font-black mt-2">
+                                3X Sales Outreach Growth
+                            </h3>
+                        </div>
+
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl">
+
+                            <i
+                                class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6">
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                +300%
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                Leads
+                            </p>
+                        </div>
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                +52%
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                Conversion
+                            </p>
+                        </div>
+
+                        <div>
+
+                            <h4
+                                class="text-3xl font-black gradient-text">
+                                18h
+                            </h4>
+
+                            <p class="text-slate-400 mt-2">
+                                Coverage
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-32">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="text-center mb-20 section-fade">
+
+                <p
+                    class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                    TESTIMONIALS
+                </p>
+
+                <h2
+                    class="text-4xl md:text-6xl font-black">
+                    Trusted By Growing
+                    Global Brands
+                </h2>
+            </div>
+
+            <div
+                class="grid lg:grid-cols-3 gap-8">
+
+                <div
+                    class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="flex items-center gap-1 text-yellow-400 mb-6">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p
+                        class="text-slate-300 leading-relaxed text-lg mb-8">
+
+                        “BCL BPO transformed our support operations with
+                        exceptional professionalism and rapid scaling.”
+                    </p>
+
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-purple-600"></div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+                                Sarah Mitchell
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                COO — SaaS Platform
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="flex items-center gap-1 text-yellow-400 mb-6">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p
+                        class="text-slate-300 leading-relaxed text-lg mb-8">
+
+                        “Their lead generation team consistently delivers
+                        qualified prospects and measurable ROI.”
+                    </p>
+
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-purple-600"></div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+                                Jason Reed
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                Founder — E-Commerce Brand
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass rounded-3xl p-8 section-fade">
+
+                    <div
+                        class="flex items-center gap-1 text-yellow-400 mb-6">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p
+                        class="text-slate-300 leading-relaxed text-lg mb-8">
+
+                        “Operational efficiency improved dramatically after
+                        integrating BCL’s support workflows.”
+                    </p>
+
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-purple-600"></div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+                                Michael Torres
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                VP Operations — Healthcare
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL -->
+    <section class="py-32 world-map">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+
+            <div class="section-fade">
+
+                <p
+                    class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                    GLOBAL PRESENCE
+                </p>
+
+                <h2
+                    class="text-4xl md:text-6xl font-black mb-8">
+
+                    Supporting Businesses
+                    Across Multiple Time Zones
+                </h2>
+
+                <p
+                    class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-16">
+
+                    Global delivery infrastructure with scalable teams
+                    supporting North America, Europe, Australia, and
+                    international markets.
+                </p>
+            </div>
+
+            <div
+                class="glass rounded-[40px] p-10 section-fade">
+
+                <img
+                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2070&auto=format&fit=crop"
+                    class="rounded-3xl opacity-80">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact"
+        class="py-32">
+
+        <div
+            class="max-w-6xl mx-auto px-6 lg:px-12">
+
+            <div
+                class="glass rounded-[40px] p-10 lg:p-16 section-fade">
+
+                <div
+                    class="grid lg:grid-cols-2 gap-16 items-center">
+
+                    <div>
+
+                        <p
+                            class="text-cyan-400 uppercase tracking-[4px] text-sm mb-4">
+                            CONTACT US
+                        </p>
+
+                        <h2
+                            class="text-4xl md:text-6xl font-black leading-tight mb-8">
+
+                            Ready To Scale
+                            Your Operations?
+                        </h2>
+
+                        <p
+                            class="text-xl text-slate-400 leading-relaxed">
+
+                            Speak with our outsourcing specialists and
+                            discover how BCL BPO can optimize your
+                            customer support and operations.
+                        </p>
+                    </div>
+
+                    <!-- FORM -->
+                    <form class="space-y-6">
+
+                        <input
+                            type="text"
+                            placeholder="Full Name"
+                            class="input-style w-full p-5 rounded-2xl">
+
+                        <input
+                            type="email"
+                            placeholder="Business Email"
+                            class="input-style w-full p-5 rounded-2xl">
+
+                        <input
+                            type="text"
+                            placeholder="Company Name"
+                            class="input-style w-full p-5 rounded-2xl">
+
+                        <textarea
+                            rows="5"
+                            placeholder="Tell us about your project..."
+                            class="input-style w-full p-5 rounded-2xl"></textarea>
+
+                        <button
+                            class="btn-primary w-full py-5 rounded-2xl font-bold text-lg transition-all duration-300">
+
+                            Schedule Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-white/10 py-16">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div
+                class="grid lg:grid-cols-4 gap-12">
+
+                <div>
+
+                    <div
+                        class="flex items-center gap-3 mb-6">
+
+                        <div
+                            class="w-10 h-10 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center">
+
+                            <i
+                                class="fa-solid fa-wave-square"></i>
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-black text-xl">
+                                BCL BPO
+                            </h3>
+
+                            <p
+                                class="text-xs text-slate-400">
+                                AI-Powered Outsourcing
+                            </p>
+                        </div>
+                    </div>
+
+                    <p
+                        class="text-slate-400 leading-relaxed">
+
+                        Enterprise-grade outsourcing solutions for
+                        ambitious global businesses.
+                    </p>
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold mb-6">
+                        Services
+                    </h4>
+
+                    <div
+                        class="flex flex-col gap-3 text-slate-400">
+
+                        <a href="#">Customer Support</a>
+                        <a href="#">Technical Support</a>
+                        <a href="#">Healthcare BPO</a>
+                        <a href="#">Lead Generation</a>
+                    </div>
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold mb-6">
+                        Company
+                    </h4>
+
+                    <div
+                        class="flex flex-col gap-3 text-slate-400">
+
+                        <a href="#">About Us</a>
+                        <a href="#">Case Studies</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold mb-6">
+                        Follow Us
+                    </h4>
+
+                    <div class="flex gap-4">
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:border-cyan-400 transition">
+
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:border-cyan-400 transition">
+
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:border-cyan-400 transition">
+
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-6">
+
+                <p class="text-slate-500">
+                    © 2026 BCL BPO. All rights reserved.
+                </p>
+
+                <div
+                    class="flex gap-6 text-slate-500">
+
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+
+        // HEADER
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 50) {
+
+                header.classList.add(
+                    'bg-[#050816]/80',
+                    'backdrop-blur-xl',
+                    'border-b',
+                    'border-white/10'
+                );
+
+            } else {
+
+                header.classList.remove(
+                    'bg-[#050816]/80',
+                    'backdrop-blur-xl',
+                    'border-b',
+                    'border-white/10'
+                );
+            }
+        });
+
+        // MOBILE MENU
+        const mobileBtn = document.getElementById('mobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobile = document.getElementById('closeMobile');
+
+        mobileBtn.addEventListener('click', () => {
+
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobile.addEventListener('click', () => {
+
+            mobileMenu.classList.add('hidden');
+        });
+
+        // GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.section-fade').forEach(section => {
+
+            gsap.to(section, {
+
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out',
+
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 85%'
+                }
+            });
+        });
+
+        // COUNTERS
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+
+            const target = +counter.getAttribute('data-target');
+
+            let current = 0;
+
+            const increment = target / 100;
+
+            const updateCounter = () => {
+
+                current += increment;
+
+                if (current < target) {
+
+                    counter.innerText = Math.ceil(current);
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    counter.innerText = target;
+                }
+            };
+
+            updateCounter();
+        });
+
+        // MAGNETIC BUTTONS
+        const magneticButtons = document.querySelectorAll('.btn-primary');
+
+        magneticButtons.forEach(button => {
+
+            button.addEventListener('mousemove', e => {
+
+                const rect = button.getBoundingClientRect();
+
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                button.style.transform =
+                    `translate(${x * 0.08}px, ${y * 0.08}px)`;
+            });
+
+            button.addEventListener('mouseleave', () => {
+
+                button.style.transform = 'translate(0px,0px)';
+            });
+        });
+
+    </script>
+
+</body>
+</html>
